@@ -47,8 +47,8 @@ async function bootstrap() {
   app.useGlobalFilters(
     new HttpExceptionFilter(
       httpAdapterHost,
+     `${pjson.name}:${pjson.version}`,
       yConfig.kafka,
-      `${pjson.name}:${pjson.version}`,
     ),
   );
 
