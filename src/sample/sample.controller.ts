@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { SampleService } from './sample.service';
 import { CreateSampleDto } from './dto/create-sample.dto';
 import { UpdateSampleDto } from './dto/update-sample.dto';
@@ -8,7 +16,6 @@ import { Roles, rolesEnum } from '@transportruae/efcommon';
 export class SampleController {
   constructor(private readonly sampleService: SampleService) {}
 
-  
   @Post()
   create(@Body() createSampleDto: CreateSampleDto) {
     return this.sampleService.create(createSampleDto);
