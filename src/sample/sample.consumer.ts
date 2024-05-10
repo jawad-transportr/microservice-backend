@@ -9,10 +9,10 @@ export class SampleConsumer implements OnModuleInit {
 
   async onModuleInit() {
     this.consumerService.consume({
-      topic: { topics: ['test-service'] },
+      topic: { topics: ['updatesample', 'jawad'] },
       config: { groupId: 'sample-group' },
       onMessage: async (message) => {
-        console.log(message.value.toString());
+        console.log('consumed message', message.value.toString());
       },
     });
   }

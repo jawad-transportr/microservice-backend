@@ -31,7 +31,7 @@ export class SampleService extends GenericService {
       sample.email = email;
       sample.password = password;
       res = await queryRunner.manager.insert(Sample, sample);
-      await this.producerService.produce('test-service', {
+      await this.producerService.produce('jawad', {
         value: JSON.stringify({ createSampleDto }),
       });
       await queryRunner.commitTransaction();
